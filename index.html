@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <link rel="icon" href="img/flex-dark 2.png">
+    <link rel="stylesheet" type="text/css" href="glider.css">
+    <title>fitBuddy</title>
+</head>
+<style>
+    body{
+        margin:0;
+        box-sizing: border-box;
+        padding:0;
+    }
+    .header, .overview, .analysis, .persona, .journey-map{
+        width:100%;
+        height: 97vh;
+        padding: 0 ;
+        /* position: relative; */
+        /* width: 1440px; */
+        /* height: 1024px; */
+        /* background: linear-gradient(113.96deg, #F6D365 0%, #FDA085 96.27%); */
+        /* background-image: url("img/header.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+        /* padding: 60px; */
+    }
+    .header img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cloud-bottom img{
+        padding-top: 15%;
+    }
+    #cloud-bottom-left{
+        position: absolute;
+        display: block;
+        bottom: 0px;
+        top:500px;
+        left: 0px;
+    }
+    #cloud-bottom-middle{
+        position: absolute;
+        display: block;
+        top:500px;
+        bottom: 0px;
+        left: 30%;
+    }
+    #cloud-bottom-right{
+        position: absolute;
+        top:600px;
+        bottom: 0px;
+        right: 0px;
+    }
+    .member{
+        position: relative;
+        background-image: url("img/Members-bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .cloumn{
+        float: left;
+        width: 30.33%;
+        padding: 15px;
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .row::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .profile{
+        width: 250px;
+        max-width: 100%;
+        /* height: 300px; */
+        border-radius: 500px;
+    }
+    .id{
+        font-family: 'Baloo Bhaina 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+        color: #FFFFFF;
+        padding-top:2%
+    }
+    .name{
+        font-family: 'Baloo Bhaina 2';
+        font-style: normal;
+        font-weight: 1000;
+        font-size: 25px;
+        line-height: 36px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .article{
+        padding-top:7%;
+        text-align: center;
+    }
+    #article-member{
+        font-family: 'Baloo Da 2';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 93.4314px;
+        line-height: 157px;
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    #tan{
+        margin-left: 15.33%;
+    }
+    .overview{
+        position: relative;
+        background: linear-gradient(359.72deg, #F6D365 0.25%, #FDA085 99.77%);
+    }
+    .content-container{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .white-box{
+        width: 50%;
+        height: 120%;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .overview-txt{
+        position: relative;
+        font-family: 'Baloo Da 2';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 50px;
+
+        color: #212830;
+
+        text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        line-height: 40px;
+    }
+    .analysis{
+        position: relative;
+        background: linear-gradient(180.63deg, #F6D365 0.48%, #FDA085 99.4%);
+    }
+    .glider{
+        width: 60%;
+        height: 580px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px; 
+    }
+    .glider-prev{
+        position: absolute;
+        left: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80px;
+        height: 80px;
+        background-color: #F6D365;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .glider-next{
+        position: absolute;
+        right: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80px;
+        height: 80px;
+        background-color: #F6D365;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .content-analysis{
+        padding-top: 1%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #dots{
+        padding:2%;
+    }
+    .img-persona{
+        width:65%;
+    }
+    .img-journey{
+        width: 90%;
+    }
+    
+    .persona, .journey-map{
+        background-color: #FDA085;
+    }
+    .persona-content, .journey-map-content{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="header">
+        <img src="img/header.jpg">
+    </div>
+    <section class="member">
+        <div class="article">
+            <text id="article-member">MEMBER</text>
+        </div>
+        <div class="row">
+            <div class="cloumn">
+                <img class="profile" src="img/Aom.png" />
+                <text class="id">6388068</text>
+                <text class="name">Doungnapat Thiansukont</text>
+            </div>
+            <div class="cloumn">
+                <img class="profile" src="img/New.png" />
+                <text class="id">6388100</text>
+                <text class="name">Pheeraphat Prisan</text>
+            </div>
+            <div class="cloumn">
+                <img class="profile" src="img/Oat.png" />
+                <text class="id">6388111</text>
+                <text class="name">Sarayut Theeraumpronpunt</text>
+            </div>
+            <div class="cloumn" id="tan">
+                <img class="profile" src="img/Tan.png" />
+                <text class="id">6388115</text>
+                <text class="name">Nubthong Worathong</text>
+            </div>
+            <div class="cloumn">
+                <img class="profile" src="img/Dech.png" />
+                <text class="id">6388118</text>
+                <text class="name">Danaidech Ardsamai</text>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="cloud-bottom">
+        <img id ="cloud-bottom-left" src="img/cloud6.png">
+        <img id ="cloud-bottom-middle" src="img/cloud3.png">
+        <img id ="cloud-bottom-right" src="img/cloud4.png">
+    </div> -->
+    <section class="overview">
+        <div class="article">
+            <text id="article-member">OVERVIEW</text>
+        </div>
+        <div class="content-container">
+            <img id="woman" src="img/woman.png">
+            <div class="white-box">
+                <text class="overview-txt"> 
+                    According to the 17 Sustainable Development Goals, good health and well-being are one of them. 
+                    There are many related applications in the market right now. 
+                    However, one thing the application mostly does not give is motivation so some of the users who use health applications or people who set their goals cannot follow the plan. 
+                    The study from the University of Scranton states that a whopping 92% of people who set New Year's goals actually never achieve them[1]. 
+                    Therefore, it is important to give them the motivation to be that  8%. 
+                    Moreover, Healthdirect, the free Australian health adviser said that motivation is important because it provides users with goals to work towards, 
+                    helps them change old habits and helps them cope with challenges and opportunities[2]. 
+                </text>
+            </div>
+        </div>
+    </section>
+    <section class="analysis">
+        <div class="article">
+            <text id="article-member">An analysis of existing system</text>
+        </div>
+        <div class="glider-contain">
+            <div class="glider">
+              <div class="content-analysis">
+                <img src="img/jaha.png">
+              </div>              
+              <div class="content-analysis">
+                <img src="img/Strava.png">
+              </div>
+              <div class="content-analysis">
+                <img src="img/home-workout.png">
+              </div>
+              <div class="content-analysis">
+                <img src="img/fit-body.png">
+              </div>
+            </div>
+    
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <div role="tablist" id="dots"></div>
+          </div>
+    </section>
+    <section class="persona">
+        <div class="article">
+            <text id="article-member">USER PERSONAS</text>
+        </div>
+        <div class="persona-content">
+            <img class="img-persona" src="img/persona.png">
+        </div>
+    </section>
+    <section class="journey-map">
+        <div class="article">
+            <text id="article-member">USER JOURNEY MAP</text>
+        </div>
+        <div class="journey-map-content">
+            <img class="img-journey" src="img/journey-map.png">
+        </div>
+    </section>
+
+    <script src="glider.js"></script>
+    <script>
+        window.addEventListener('load', function(){ 
+            new Glider(document.querySelector('.glider'), {
+            slidesToShow: 1,
+            dots: '#dots',
+            draggable: true,
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+                }
+            });
+        })
+    </script>
+</body>
+</html>
